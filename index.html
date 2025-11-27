@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V hotel | Главная</title>
+  <link rel="stylesheet" href="assets/css/common.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+  <!-- ===== Шапка ===== -->
+  <header>
+    <div class="logo">V hotel</div>
+
+    <nav>
+      <a href="#home" class="active">Главная</a>
+      <a href="#rooms">Номера</a>
+      <a href="#services">Услуги</a>
+      <a href="#gallery">Галерея</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+
+    <!-- Профиль -->
+    <div class="profile">
+      <img src="assets/images/user-icon.svg" alt="Профиль" id="profileIcon">
+    </div>
+  </header>
+
+  <!-- ===== Главный блок ===== -->
+  <section class="hero" id="home">
+    <div class="overlay">
+      <h1>Добро пожаловать в V hotel</h1>
+      <p>Роскошный отдых в самом сердце города. Забронируйте свой номер прямо сейчас!</p>
+      <button id="bookNowBtn">Забронировать</button>
+    </div>
+  </section>
+
+  <!-- ===== Выбор номеров ===== -->
+  <section class="rooms" id="rooms">
+    <h2>Выберите ваш номер</h2>
+    
+    <div class="rooms-container">
+      <div class="room-card">
+        <img src="assets/images/standart_solo/bed.jpg" alt="Стандарт одиночный">
+        <div class="room-info">
+          <h3>Стандарт — Одиночный</h3>
+          <p>$150 / ночь</p>
+          <button class="book-room" data-room="Стандарт — Одиночный" data-price="150">Забронировать</button>
+        </div>
+      </div>
+
+      <div class="room-card">
+        <img src="assets/images/standart_duo/bed.jpg" alt="Стандарт на двоих">
+        <div class="room-info">
+          <h3>Стандарт — На двоих</h3>
+          <p>$200 / ночь</p>
+          <button class="book-room" data-room="Стандарт — На двоих" data-price="200">Забронировать</button>
+        </div>
+      </div>
+
+      <div class="room-card">
+        <img src="assets/images/lux_solo/bed.jpg" alt="Люкс одиночный">
+        <div class="room-info">
+          <h3>Люкс — Одиночный</h3>
+          <p>$250 / ночь</p>
+          <button class="book-room" data-room="Люкс — Одиночный" data-price="250">Забронировать</button>
+        </div>
+      </div>
+
+      <div class="room-card">
+        <img src="assets/images/lux_duo/bed.jpeg" alt="Люкс на двоих">
+        <div class="room-info">
+          <h3>Люкс — На двоих</h3>
+          <p>$300 / ночь</p>
+          <button class="book-room" data-room="Люкс — На двоих" data-price="300">Забронировать</button>
+        </div>
+      </div>
+
+      <div class="room-card">
+        <img src="assets/images/romantic/bed.jpg" alt="Романтик">
+        <div class="room-info">
+          <h3>Романтик</h3>
+          <p>$350 / ночь</p>
+          <button class="book-room" data-room="Романтик" data-price="350">Забронировать</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== Услуги ===== -->
+  <section class="services" id="services">
+    <h2>Наши услуги</h2>
+    <div class="service-list">
+      <div class="service-item">🏨 Комфортабельные номера</div>
+      <div class="service-item">🍽 Ресторан и бар</div>
+      <div class="service-item">💆‍♀️ SPA и массаж</div>
+      <div class="service-item">🏊‍♂️ Бассейн</div>
+      <div class="service-item">🚗 Трансфер и аренда авто</div>
+    </div>
+  </section>
+
+  <!-- ====== Галерея ====== -->
+  <section class="gallery" id="gallery">
+    <h2>Фотогалерея нашего отеля</h2>
+    <div class="gallery-wrapper">
+      <button class="gallery-btn prev">&#10094;</button>
+
+      <div class="gallery-window">
+        <div class="gallery-track">
+          <img src="assets/images/gallery/bath.jpg">
+          <img src="assets/images/gallery/bed.jpg">
+          <img src="assets/images/gallery/bed2.jpg">
+          <img src="assets/images/gallery/bed3.jpeg">
+          <img src="assets/images/gallery/kitchen.jpg">
+          <img src="assets/images/gallery/kitchen1.jpg">
+        </div>
+      </div>
+
+      <button class="gallery-btn next">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- ===== Отзывы ===== -->
+  <section class="reviews" id="reviews">
+    <h2>Отзывы наших гостей</h2>
+    <div class="review-container">
+      <div class="review">
+        <p>"Отличный сервис и уютная атмосфера. Обязательно вернусь снова!"</p>
+        <span>— Анна, Алматы</span>
+      </div>
+      <div class="review">
+        <p>"Номера просторные, персонал приветливый. Очень понравилось!"</p>
+        <span>— Дмитрий, Астана</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Контакты ====== -->
+  <section class="contact" id="contact">
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <h2>Контакты</h2>
+        <p><strong>Телефон:</strong> <a href="tel:+79361318280">+7 (123) 456-78-91</a></p>
+        <p><strong>E-mail:</strong> <a href="mailto:vhotel86@gmail.com">vhotel86@gmail.com</a></p>
+        <p><strong>Адрес:</strong> г. Москва, Малый Палашёвский пер., 5</p>
+        <p><em>Круглосуточное заселение</em></p>
+      </div>
+
+      <div class="contact-form">
+        <h3>Заказать звонок</h3>
+
+        <form action="#" method="post">
+          <input type="text" name="name" placeholder="Ваше имя" required>
+          <input type="tel" name="phone" placeholder="Телефон" required>
+          <button type="submit">Отправить</button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Подвал ===== -->
+  <footer>
+    <p>© 2025 V hotel. Все права защищены.</p>
+  </footer>
+
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

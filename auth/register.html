@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Регистрация</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <link rel="stylesheet" href="../assets/css/auth.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">V hotel</div>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="booking.html">Бронирование</a>
+    </nav>
+    <div class="profile">
+      <img src="../assets/images/user-icon.svg" alt="Профиль" id="profileIcon">
+      <div class="profile-menu hidden" id="profileMenu"></div>
+    </div>
+  </header>
+
+  <section class="booking">
+    <h2>Регистрация</h2>
+
+    <form id="registerForm" style="max-width:400px;margin:0 auto;">
+      <div class="form-row">
+        <label>Имя *</label>
+        <input type="text" id="firstName" required>
+      </div>
+
+      <div class="form-row">
+        <label>Фамилия *</label>
+        <input type="text" id="lastName" required>
+      </div>
+
+      <div class="form-row">
+        <label>Телефон *</label>
+        <input type="tel" id="phone" required placeholder="+7 (123) 456-7890">
+      </div>
+
+      <div class="form-row">
+        <label>Email</label>
+        <input type="email" id="email" placeholder="optional@email.com">
+      </div>
+
+      <div class="form-row">
+        <label>Пароль *</label>
+        <input type="password" id="password" required minlength="6">
+      </div>
+
+      <div class="form-row">
+        <label>Подтвердите пароль *</label>
+        <input type="password" id="confirmPassword" required minlength="6">
+      </div>
+
+      <button type="submit" class="book-btn">Зарегистрироваться</button>
+      
+      <div id="registerMessage" style="display: none; margin-top: 15px; padding: 10px; border-radius: 5px;"></div>
+      
+      <p style="text-align: center; margin-top: 20px;">
+        Уже есть аккаунт? <a href="login.html" style="color: #e63946;">Войдите</a>
+      </p>
+    </form>
+  </section>
+
+<script src="../assets/js/register.js"></script>
+</body>
+</html>

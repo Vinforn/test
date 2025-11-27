@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Бронирование - V hotel</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <link rel="stylesheet" href="../assets/css/booking.css">
+</head>
+<body>
+  <header>
+    <div class="logo">V hotel</div>
+    <nav>
+      <a href="../index.html">Главная</a>
+      <a href="booking.html" class="active">Бронирование</a>
+      <a href="my-bookings.html">Мои бронирования</a>
+    </nav>
+    <div class="profile">
+      <img src="../assets/images/user-icon.svg" alt="Профиль" id="profileIcon">
+    </div>
+  </header>
+
+  <section class="booking-section">
+    <h2>Бронирование номера</h2>
+    <p>Выберите даты проживания и доступный номер</p>
+
+    <!-- Выбор дат -->
+    <div class="date-selection">
+      <h3>📅 Выберите даты проживания</h3>
+      <div class="date-inputs">
+        <div class="form-row">
+          <label>Дата заезда</label>
+          <input type="date" id="checkIn" required>
+        </div>
+        <div class="form-row">
+          <label>Дата выезда</label>
+          <input type="date" id="checkOut" required>
+        </div>
+      </div>
+    </div>
+
+    <!-- Сообщение об успешном бронировании -->
+    <div class="success-message" id="successMessage">
+      <h3>Бронирование успешно завершено!</h3>
+      <p>С вами свяжутся для подтверждения.</p>
+      <button id="continueBooking" class="book-btn">Забронировать еще один номер</button>
+      <a href="my-bookings.html" class="book-btn secondary">Мои бронирования</a>
+    </div>
+
+    <!-- Загрузка номеров -->
+    <div id="roomsLoading" class="loading-rooms">
+      <div class="loading-spinner"></div>
+      <p>Поиск доступных номеров...</p>
+    </div>
+
+    <!-- Доступные номера -->
+    <div class="rooms-section" id="roomsSection">
+      <h3>Доступные номера</h3>
+      <div class="rooms-container" id="roomsContainer">
+        <!-- Номера будут загружены здесь -->
+      </div>
+    </div>
+
+    <!-- Форма бронирования -->
+    <form id="bookingForm" class="booking-form">
+      <h3>Заполните данные для бронирования</h3>
+
+      <div class="form-section">
+        <h4>Основная информация</h4>
+        <div class="form-row">
+          <label>Ваше имя</label>
+          <input type="text" id="name" required>
+        </div>
+
+        <div class="form-row">
+          <label>Телефон</label>
+          <input type="tel" id="phone" required placeholder="+7 (___) ___-__-__">
+        </div>
+
+        <div class="form-row">
+          <label>Email</label>
+          <input type="email" id="email" required placeholder="your@email.com">
+        </div>
+
+        <div class="form-row">
+          <label>Тип номера</label>
+          <select id="roomType" required>
+            <option value="" disabled selected>Выберите номер</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label>Дата заезда</label>
+          <input type="date" id="formCheckIn" required>
+        </div>
+
+        <div class="form-row">
+          <label>Дата выезда</label>
+          <input type="date" id="formCheckOut" required>
+        </div>
+
+        <div class="form-row">
+          <label>Количество гостей</label>
+          <input type="number" id="guests" min="1" max="4" value="1" required>
+        </div>
+      </div>
+
+      <!-- Секция данных документа -->
+      <div class="document-section">
+        <h4>Данные для регистрации</h4>
+        <div class="form-note">
+          Эти данные будут сохранены в вашем профиле для будущих бронирований
+        </div>
+        
+        <div class="form-row">
+          <label>Тип документа</label>
+          <select id="documentType" required>
+            <option value="">Выберите тип документа</option>
+            <option value="1">Паспорт гражданина РФ</option>
+            <option value="2">Заграничный паспорт</option>
+            <option value="3">Водительское удостоверение</option>
+            <option value="4">Военный билет</option>
+            <option value="5">Свидетельство о рождении</option>
+            <option value="6">Вид на жительство</option>
+            <option value="7">Паспорт иностранного гражданина</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label>Номер документа</label>
+          <input type="text" id="documentNumber" required placeholder="Введите номер документа">
+        </div>
+
+        <div class="form-row">
+          <label>Страна гражданства</label>
+          <select id="country" required>
+            <option value="">Выберите страну</option>
+            <option value="1">Россия</option>
+            <option value="2">Казахстан</option>
+            <option value="3">Беларусь</option>
+            <option value="4">Узбекистан</option>
+            <option value="5">Армения</option>
+            <option value="6">Азербайджан</option>
+            <option value="7">Грузия</option>
+            <option value="8">Кыргызстан</option>
+            <option value="9">Молдова</option>
+            <option value="10">Украина</option>
+          </select>
+        </div>
+      </div>
+      
+      <!-- Секция оплаты -->
+      <div class="payment-section">
+        <h4>Оплата</h4>
+        <div class="payment-option">
+          <input type="checkbox" id="payNow">
+          <label for="payNow">Оплатить сразу</label>
+        </div>
+
+        <div class="payment-details" id="paymentDetails">
+          <div class="payment-summary">
+            <p><strong>Стоимость бронирования:</strong></p>
+            <p>Количество ночей: <span id="paymentNights">0</span></p>
+            <p>Общая сумма: <span id="paymentAmount">0</span> руб.</p>
+          </div>
+
+          <div class="payment-methods">
+            <div class="payment-method" data-method="card">
+              <img src="../assets/images/credit-card.svg" alt="Банковская карта">
+              <div>Банковская карта</div>
+            </div>
+            <div class="payment-method" data-method="yoomoney">
+              <img src="../assets/images/yoomoney.svg" alt="ЮMoney">
+              <div>ЮMoney</div>
+            </div>
+            <div class="payment-method" data-method="sberbank">
+              <img src="../assets/images/sberbank.svg" alt="Сбербанк">
+              <div>Сбербанк</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <button type="submit" class="book-btn">Забронировать</button>
+    </form>
+  </section>
+
+  <script src="../assets/js/common.js"></script>
+  <script src="../assets/js/booking.js"></script>
+</body>
+</html>

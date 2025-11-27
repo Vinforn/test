@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Профиль - V hotel</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <link rel="stylesheet" href="../assets/css/profile.css">
+</head>
+<body>
+  <header>
+    <div class="logo">V hotel</div>
+    <nav>
+      <a href="../index.html">Главная</a>
+      <a href="../booking/booking.html">Бронирование</a>
+      <a href="../booking/my-bookings.html">Мои бронирования</a>
+    </nav>
+    <div class="profile">
+      <img src="../assets/images/user-icon.svg" alt="Профиль" id="profileIcon">
+    </div>
+  </header>
+
+  <section class="profile-section">
+    <h2>Ваш профиль</h2>
+    
+    <div class="profile-form">
+      <div class="form-section">
+        <h3>Основная информация</h3>
+        <div class="form-row">
+          <label>Имя</label>
+          <input type="text" id="firstName">
+        </div>
+        <div class="form-row">
+          <label>Фамилия</label>
+          <input type="text" id="lastName">
+        </div>
+        <div class="form-row">
+          <label>Телефон</label>
+          <input type="tel" id="phone">
+        </div>
+        <div class="form-row">
+          <label>Email</label>
+          <input type="email" id="email">
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>Данные документа</h3>
+        <div class="form-row">
+          <label>Тип документа</label>
+          <select id="documentType">
+            <option value="">Выберите тип документа</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Номер документа</label>
+          <input type="text" id="documentNumber" placeholder="Введите номер документа">
+        </div>
+        <div class="form-row">
+          <label>Страна гражданства</label>
+          <select id="country">
+            <option value="">Выберите страну</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="button" class="save-btn" id="saveProfileBtn">Сохранить изменения</button>
+      <div class="info-message" id="saveMessage"></div>
+    </div>
+
+    <div class="profile-actions">
+      <a href="../booking/my-bookings.html" class="book-btn">
+        📋 Мои бронирования
+      </a>
+      <button id="logoutBtn" class="book-btn secondary">
+        🚪 Выйти
+      </button>
+    </div>
+  </section>
+
+  <script src="../assets/js/common.js"></script>
+  <script src="../assets/js/profile.js"></script>
+</body>
+</html>
